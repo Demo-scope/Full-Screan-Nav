@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+}
+
+
+/* for full screan nav */
+nav div{
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 20px 40px;
+}
+nav div span{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+
+
+.layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: #888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    transform: translateY(-100%);
+}
+.layout a {
+    text-decoration: none;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+.layout a:hover {
+    background-color: #000000a1;
+}
+.layout span {
+    position: fixed;
+    height: 28px;
+    top: calc(20px + 70px);
+    right: 20px;
+    font-size: 20px;
+    color: rgb(255, 0, 0 , 0.7);
+    border: 2px solid rgb(255, 0, 0 , 0.7);;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.layout span:hover {
+    color: red;
+    border-color: red;
+}
+
+.layout.open {
+    transform: translateY(0);
+}
+
+
+
+/* for type write effects */
+.layout div {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.layout h3 {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    letter-spacing: 5px;
+    text-align: center;
+    width: 460px;
+    border-right: 2px solid rgb(255, 255, 255 , 0.8);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes control-width {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 460px;
+    }
+}
+@keyframes blenk {
+    0% {
+        border-right-color: rgb(255, 255, 255 , 0.8);
+    }
+    100% {
+        border-right-color: transparent
+    }
+}
